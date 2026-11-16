@@ -1,0 +1,13 @@
+{
+  "name": "claude-discord-bot-skill",
+  "version": "1.0.0",
+  "description": "Research-backed Discord bot starter and Claude skill repository",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js"
+  },
+  "dependencies": {
+    "discord.js": "^14.18.0",
+    "dotenv": "^16.4.5"
+  }
+}
