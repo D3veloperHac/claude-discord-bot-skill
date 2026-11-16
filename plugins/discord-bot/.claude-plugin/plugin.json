@@ -1,0 +1,9 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-plugin.json",
+  "name": "discord-bot",
+  "description": "Guidance for planning, building, securing, and operating Discord bots.",
+  "version": "1.0.0",
+  "author": {
+    "name": "D3veloperHac"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-marketplace.json",
+  "name": "claude-discord-bot-skill",
+  "owner": {
+    "name": "D3veloperHac"
+  },
+  "metadata": {
+    "description": "Research-backed Claude Code skills for designing and building Discord bots.",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "discord-bot",
+      "source": "./plugins/discord-bot",
+      "description": "Guidance for planning, building, securing, and operating Discord bots.",
+      "version": "1.0.0",
+      "author": {
+        "name": "D3veloperHac"
+      },
+      "category": "development"
+    }
+  ]
+}

@@ -1,82 +1,44 @@
-# Claude Discord Bot Skill
+# Claude Discord Bot Skills Marketplace
 
-This repository packages a research-backed Claude skill for building, securing, and operating Discord bots. It includes:
+A Claude Code plugin marketplace for the research-backed Discord bot skill.
 
-- A Claude skill for Discord bot architecture
-- A task-model-routing skill for selecting the right AI model based on work type
-- A starter Discord.js bot implementation
-- Research notes grounded in Discord’s official developer docs and platform guidance
+## Add this marketplace
 
-## Repo layout
+In Claude Code, add this GitHub repository as a **marketplace**:
 
-- `.claude/skills/discord-bot/SKILL.md` — primary skill for bot planning and implementation
-- `.claude/skills/task-model-router/SKILL.md` — helper skill for choosing the model tier based on task complexity
-- `src/index.js` — minimal Discord bot starter
-- `docs/discord-research.md` — research summary from official Discord docs
-- `package.json` — Node.js starter dependencies
-- `.env.example` — sample environment variables
+```text
+D3veloperHac/claude-discord-bot-skill
+```
 
-## Quick start
+Or use the repository URL:
 
-1. Install dependencies:
+```text
+https://github.com/D3veloperHac/claude-discord-bot-skill
+```
 
-   ```bash
-   npm install
-   ```
+The repository root contains `.claude-plugin/marketplace.json`, and the marketplace points to the installable plugin in `plugins/discord-bot/`.
 
-2. Copy environment variables:
+After adding/syncing the marketplace, install the **discord-bot** plugin. The plugin provides the `discord-bot:discord-bot` skill (the exact invocation may vary by Claude Code version/configuration).
 
-   ```bash
-   cp .env.example .env
-   ```
+> This repository is a Claude Code plugin marketplace. It is not a Claude.ai custom-skill ZIP upload. For Claude.ai, upload the skill directory or a ZIP containing the skill's `SKILL.md` instead.
 
-3. Fill in:
+## Contents
 
-   - `DISCORD_TOKEN`
-   - `CLIENT_ID`
-   - `GUILD_ID` (optional for guild-only testing)
+- `plugins/discord-bot/.claude-plugin/plugin.json` — plugin metadata
+- `plugins/discord-bot/skills/discord-bot/SKILL.md` — installable Discord bot skill
+- `.claude-plugin/marketplace.json` — marketplace catalog
+- `.claude/skills/discord-bot/SKILL.md` — project-local skill copy
+- `.claude/skills/task-model-router/SKILL.md` — task model recommendation skill
+- `src/` — starter bot code
+- `docs/discord-research.md` — research notes and official references
 
-4. Run the bot:
+## Starter bot
 
-   ```bash
-   npm start
-   ```
+The sample bot is separate from the plugin. To run it, install dependencies, copy `.env.example` to `.env`, configure a Discord application and bot token, then run `npm start`. Do not commit secrets.
 
-## Discord research highlights
+## Trust and policy
 
-Discord bots are built on the following core platform components:
-
-- Applications: the app identity created in the Developer Portal
-- Bot users: the actual account that connects to Discord
-- Gateway: WebSocket-based real-time event stream
-- REST API: HTTP calls for CRUD and moderation operations
-- Interactions: slash commands, buttons, select menus, modals, and context menu commands
-- OAuth2: authorization and bot invite links with scopes and permissions
-- Intents: event subscriptions that determine what your bot receives
-- Rate limits: request quotas and `429` handling
-- Security: tokens, least privilege, role hierarchy, and signature verification on interactions
-
-For a deeper summary, see `docs/discord-research.md`.
-
-## Claude skill usage
-
-Use the installed skill when you want Claude to:
-
-- design a Discord bot architecture
-- decide when to use Gateway vs REST vs interactions
-- pick the correct intents for the feature set
-- avoid privilege misuse and unknown security pitfalls
-- create a secure bot starter implementation
-- handle slash commands, buttons, and follow-up responses correctly
-
-## Recommended reading from Discord
-
-- Discord Developer Portal: https://discord.com/developers/applications
-- Discord API docs: https://github.com/discord/discord-api-docs
-- OAuth2 and permissions: https://docs.discord.com/developers/platform/oauth2-and-permissions
-- Gateway docs: https://docs.discord.com/developers/docs/topics/gateway
-- Interactions docs: https://docs.discord.com/developers/docs/interactions/receiving-and-responding
-- Rate limits: https://docs.discord.com/developers/docs/topics/rate-limits
+Only install plugins from sources you trust. Discord APIs, permissions, and Claude plugin formats can change; consult the official links in `docs/discord-research.md` before relying on time-sensitive details.
 
 ## License
 
